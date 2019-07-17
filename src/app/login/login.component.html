@@ -1,0 +1,26 @@
+<!--
+  temple derive form 
+-->
+
+<div class="col-md-4 offset-md-4 card card-body mt-5">
+  <h4 class="text-center">Login</h4>
+  <form action="" #loginForm="ngForm" (ngSubmit)="printForm(loginForm)">
+      <input type="text" name="username" id="username" placeholder="Enter Username" 
+      class="form-control mb-3" ngModel #username="ngModel" minlength="4" required pattern='^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$'>
+      <div *ngIf='username.touched && username.invalid' class="alert alert-danger">
+          <p *ngIf='username.errors.minlength'>minimum length is 4 characters</p>
+          <p *ngIf='username.errors.required'>username is required</p>
+          <p *ngIf='username.errors.pattern'>this takes an email</p>
+      </div>
+      <input type="password" name="password" id="password" placeholder="Enter Password" 
+      class="form-control mb-3" ngModel #password='ngModel' minlength="4" required >
+      <div *ngIf='password.touched && password.invalid' class="alert alert-danger">
+        <p *ngIf='password.errors.minlength'>minimum length is 4 characters</p>
+        <p *ngIf='password.errors.required'>password is required</p>
+        </div>
+      <div class="btn-group col-md-12">
+          <button type="reset" class="btn btn-outline-dark">Reset</button>
+          <button type="submit" class="btn btn-outline-primary" [disabled]='loginForm.invalid'>Submit</button>
+      </div>
+  </form>
+

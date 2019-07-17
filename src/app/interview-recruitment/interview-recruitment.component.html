@@ -1,0 +1,38 @@
+<div class="col-md-4 offset-md-4 card card-body mt-5">
+        <h2 class="text-center">Add Recruitment</h2>
+        <form action="" method= "post" [formGroup] = "Recruitment" (ngSubmit)= 'submitForm(Recruitment)'>
+            Client Name :<input type="text" name="clname" id="clname"  
+            class="form-control mb-3" formControlName='clname'>
+            <div *ngIf='cname.touched && cname.invalid' class="alert alert-danger">
+                <p *ngIf='cname.errors.minlength'>minimum length is 4 characters</p>
+                <p *ngIf='cname.errors.required'>cname is required</p>
+                <p *ngIf='cname.errors.nospace'>this field oes not accept white spaces</p>
+    
+            </div>
+            Select Stack : <input type="text" name="stack" id="stack" 
+            class="form-control mb-3" formControlName='stack'>
+
+            Experience Required :<input type="text" name="reqexperience" id="reqexperience"  
+            class="form-control mb-3" formControlName='reqexperience'>
+
+            Location : <input type="text" name="location" id="location" 
+            class="form-control mb-3" formControlName='location'>
+
+           No Of Position : <input type="text" name="totalposition" id="totalposition"  
+            class="form-control mb-3" formControlName='totalposition'>
+
+            Designation : <input type="text" name="designation" id="designation"  
+            class="form-control mb-3" formControlName='designation'>
+
+            Job Description : <input type="text" name="description" id="description"  
+            class="form-control mb-3" formControlName='description'>
+    
+            Closing Date :<input type="date" name="closing" id="closing"  class="form-control mb-3"formControlName='closing' >
+            
+    
+         
+            <div class="btn-group col-md-12">
+                <button type="submit" class="btn btn-outline-primary" >Add Recruitment</button>
+            </div>
+        </form>
+        <!-- [disabled]='RecruitmentForm.invalid' -->

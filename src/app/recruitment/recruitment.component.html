@@ -1,0 +1,63 @@
+<div class="col-md-4 offset-md-4 card card-body mt-5">
+    <h2 class="text-center">Schedule Interview</h2>
+    <form action="" method= "post" [formGroup] = "RecruitmentForm" (ngSubmit)= 'submitForm(RecruitmentForm)'>
+        Candidate Name:<input type="text" name="cname" id="cname" placeholder="Enter Candiate Name" 
+        class="form-control mb-3" formControlName='cname'>
+        <div *ngIf='cname.touched && cname.invalid' class="alert alert-danger">
+            <p *ngIf='cname.errors.minlength'>minimum length is 4 characters</p>
+            <p *ngIf='cname.errors.required'>cname is required</p>
+            <p *ngIf='cname.errors.nospace'>this field oes not accept white spaces</p>
+
+        </div>
+        Gender :<input type="text" name="gender" id="gender" placeholder="Enter Candidate Gender" 
+        class="form-control mb-3"formControlName='gender' >
+
+        Scheuled Date :<input type="date" name="scheduled" id="scheduled"  class="form-control mb-3"formControlName='scheduled' >
+        
+
+        Select Stack : <input type="text" name="stack" id="stack" placeholder="Enter stack of Candidate" 
+        class="form-control mb-3" formControlName='stack'>
+
+        
+        Contact Number : <input type="tel" name="contact" id="contact" placeholder="Enter canidate ontact details" 
+        class="form-control mb-3" formControlName='contact'>
+
+        Email : <input type="email" name="email" id="email" placeholder="Enter Email of Candidate" 
+        class="form-control mb-3" formControlName='email'>
+
+        Current Organisation : <input type="text" name="ccompany" id="ccompany" placeholder="Enter current Company details" 
+        class="form-control mb-3" formControlName='ccompany'>
+
+    
+            Total Experience :<input type="text" name="experience" id="experience" placeholder="Enter experience of Candidate" 
+            class="form-control mb-3" formControlName='experience'>
+
+            Relevant Experience : <input type="text" name="rexperience" id="rexperience" placeholder="Enter Relevant experience of Candidate" 
+            class="form-control mb-3" formControlName='rexperience'>
+
+
+            Ready to relocate ? <input type="text" name="relocate" id="relocate"  placeholder="Yes/No?" class="form-control mb-3" formControlName='stack'>
+
+            CCTC : <input type="text" name="salary" id="salary" placeholder="Enter current cmpany salary in Rupees" 
+            class="form-control mb-3"formControlName='salary' >
+  
+         ECTC : <input type="text" name="esalary" id="esalary" placeholder="Enter Expecte Salary in Rupees" 
+            class="form-control mb-3" formControlName='esalary'>
+
+            Notice Period : <input type="text" name="notice" id="notice" placeholder="EnterNotice Period of Candidate" 
+            class="form-control mb-3" formControlName='notice'>
+
+            Location : <input type="text" name="location" id="location" placeholder="Enter Interview Location" 
+            class="form-control mb-3" formControlName='location'>
+
+            Interview Panel : <input type="text" name="panel" id="panel" placeholder="Enter Interview Panel details" 
+            class="form-control mb-3" formControlName='panel'>
+
+            
+     
+        <div class="btn-group col-md-12">
+            <button type="reset" class="btn btn-outline-dark">Reset</button>
+            <button type="submit" class="btn btn-outline-primary" >Submit</button>
+        </div>
+    </form>
+    <!-- [disabled]='RecruitmentForm.invalid' -->

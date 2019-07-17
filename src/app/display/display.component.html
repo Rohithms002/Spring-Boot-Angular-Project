@@ -1,0 +1,48 @@
+<div class= "container mt-3">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Candidate Name</th>
+                    <th>Scheuled Date </th>
+                    <th>Select Stack</th>
+                    <th>Contact Number</th>
+                    <th>Email</th>
+                    <th>Current Organisation</th>
+                    <th>Total Experience</th>
+                    <th>Relevant Experience</th>
+                    <th>Ready to relocate ?</th>
+                    <th>CCTC</th>
+                    <th>ECTC</th>
+                    <th>Notice Period</th>
+                    <th>Location</th>
+                    <th>Interview Panel </th>
+
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor ="let user of users; index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{user.cname}}</td>
+                    <td>{{user.gender}}
+                    <td>{{user.scheduled}}</td>
+                    <td>{{user.stack}}</td>
+                    <td>{{user.contact}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.ccompany}}</td>
+                    <td>{{user.experience}}</td>
+                    <td>{{user.relocate}}</td>
+                    <td>{{user.salary}}</td>
+                    <td>{{user.esalary}}</td>
+                    <td>{{user.notice}}</td>
+                    <td>{{user.location}}</td>
+                    <td>{{user.panel}}</td>
+                    <td>
+                        <button type="button" class="btn btn-outline-success" (click)="deleteCandidate(user.id)">Remove</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    

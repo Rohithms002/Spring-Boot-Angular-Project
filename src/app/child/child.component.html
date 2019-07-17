@@ -1,0 +1,5 @@
+<h1 class="bg-warning text-info mt-5">Child component</h1>
+<button class="btn btn-outline-success" (click)='sendData()'>Send Data To Parent</button>
+<button class="btn btn-outline-danger" (click)='revertData()'>Revert Data From Parent</button>
+<h1 *ngIf="dataFromParent!=''">{{dataFromParent}}</h1>
+<!-- <img *ngIf='imgurlFromParent != "" ' src={{imgurlFromParent}} alt=""> -->

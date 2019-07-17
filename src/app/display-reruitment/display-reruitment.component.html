@@ -1,0 +1,37 @@
+<div class= "container mt-3">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Client Name </th>
+                    <th>Select Stack </th>
+                    <th>Experience Required </th>
+                    <th>Location</th>
+                    <th>No Of Position</th>
+                    <th>Designation </th>
+                    <th>Job Description</th>
+                    <th>Closing Date</th>
+
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor ="let client of clients; index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{client.clname}}</td>
+                    <td>{{client.stack}}
+                    <td>{{client.reqexperience}}</td>
+                    <td>{{client.location}}</td>
+                    <td>{{client.totalposition}}</td>
+                    <td>{{client.designation}}</td>
+                    <td>{{client.description}}</td>
+                    <td>{{client.closing}}</td>
+                   
+                    <td>
+                        <button type="button" class="btn btn-outline-success" (click)="deleteRequirement(client.id)">Remove</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
